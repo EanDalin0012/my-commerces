@@ -26,7 +26,14 @@ export class HeaderComponent implements OnInit {
   path = '';
   scroll    = "";
   isScrollTop = false;
-  userInfo  = this.util.getSecureStorage( 'USER_INFO' ); // 사용자 정보
+  userInfo  = {
+    subIDYn: 'N',
+    customerName: 'Dalin',
+    userName: 'userName',
+    corporateName: 'corporateName',
+    corporateUserProfileImageURL: 'https://www.beverlyhillsvets.com/blog/wp-content/uploads/2017/04/BevHills_iStock-518615498.jpg'
+
+  };
   recordsTotal: any; // 알림 수
   menuRightData = [{
     programTypeCode       : '',
@@ -39,7 +46,7 @@ export class HeaderComponent implements OnInit {
     changeDate            : '',
     seqNo                 : '',
   }];
-  imageURL = this.userInfo.corporateUserProfileImageURL;
+  imageURL = 'https://www.beverlyhillsvets.com/blog/wp-content/uploads/2017/04/BevHills_iStock-518615498.jpg';
   // 탭 메뉴 If 조건
   favoriteMenuList  = [
     {
@@ -48,7 +55,7 @@ export class HeaderComponent implements OnInit {
     }
   ]; // this.util.getSecureStorage("favoritelist"); // 즐겨찾기 List
   langCode          = this.translate.currentLang; // 언어 코드
-  langData          = { // 언어코드별 Text 및 Class
+  langData          = {
     en: { class: "eng", text: "English"},
     km: { class: "khmer", text: "ខ្មែរ"},
     zh: { class: "china", text: "中文"},
@@ -68,7 +75,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-  ) { }
+  ) {
+    this.translate = translate;
+   }
 
   ngOnInit(): void {
   }
@@ -221,7 +230,4 @@ onBankSelect(value: any) {
 
 userMenu() {
 }
-
-
-
 }

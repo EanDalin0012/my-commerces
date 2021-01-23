@@ -1,1 +1,329 @@
-<span>Header</span>
+<body [ngClass]="scroll" (scroll)="menuscroll()" (click)="onClickBody()">
+  <div class="subWrap01">
+    <!-- header -->
+    <div class="header">
+      <!-- personal & utility -->
+      <div class="personalWrap">
+        <!-- user -->
+        <div class="userWrap">
+          <span class="user_logo">
+            <img  *ngIf="!imagePreviews" src="{{userInfo.corporateUserProfileImageURL}}" alt="logo" onerror="this.src='./assets/images/default-user-icon.jpg';"/>
+            <img *ngIf="imagePreviews" [src]="imagePreviews.src" />
+          </span>
+
+          <p class="wrap_company_name">
+            <strong class="name" *ngIf="userInfo.subIDYn === 'N'">{{ userInfo.customerName }}</strong>
+            <strong class="name" *ngIf="userInfo.subIDYn === 'Y'">{{ userInfo.userName }}</strong>
+            <span class="corp_name">{{ userInfo.corporateName }}</span>
+          </p>
+        </div>
+        <!-- //user -->
+
+        <!-- utility -->
+        <div class="utility">
+          <div class="download">
+            <a [href]="winFileUrl" download="PPCBank_smartBiz_1.5.zip" class="btn_down ico_windows" *ngIf="isOS === 'Windows'"><span>{{ 'LAYOUT.LABEL.DOWNLAOD_FOR_WINDOWS' | translate }}</span></a>
+            <a [href]="macFileUrl" download="PPCBank_smartBiz_1.5_Mac.zip" class="btn_down ico_apple" *ngIf="isOS === 'MacOS'"><span>{{ 'LAYOUT.LABEL.DOWNLAOD_FOR_MAC' | translate}}</span></a>
+          </div>
+          <div class="btns">
+            <button class="btn_util_noti" (click)="onOpenPage(119);clearSearchCondition()" title="Notification"><span>Notification</span><em class="count" *ngIf="recordsTotal !== 0" style="background: #F31700">N</em></button>
+            <button class="btn_util_setting" (click)="onOpenPage(120)" title="Setting" ><span>Setting</span></button>
+            <button class="btn_util_logout" (click)="logout()" title="Logout" ><span>Sign Out</span></button>
+          </div>
+          <!-- Change language -->
+          <div class="change_lang ui_dropdown" [ngClass]="{ 'ui_drop_open': sltLanguageList }" (click)="$event.stopPropagation();sltLanguageList = !sltLanguageList">
+            <div class="cur en">	<!-- add Class :: english:default, 中文 : china, 크메르어 : khmer -->
+              <strong>'English'</strong><button type="button" tabindex="-1" ><span>show language list</span></button>
+            </div>
+            <!-- language list -->
+            <div class="lang_list ui_drop_cont">
+              <ul>
+                <li class="" (click)="onChangeLanguage('en')"><label class=""><input type="radio" tabindex="-1"  value="en" name="lang" /><span>English</span></label></li>
+                <li class="" (click)="onChangeLanguage('km')"><label class=""><input type="radio" tabindex="-1"  value="km" name="lang" /><span>ខ្មែរ</span></label></li>
+                <li class="" (click)="onChangeLanguage('zh')"><label class=""><input type="radio" tabindex="-1"  value="zh" name="lang" /><span>中文</span></label></li>
+              </ul>
+            </div>
+            <!-- //language list -->
+          </div>
+          <!-- //Change language -->
+          <button class="logo_ppcb" (click)="logo()"><span>PPCBank</span></button>
+          <h1 class="logo_sb"><span>SmartBiz</span></h1>
+        </div>
+        <!-- //utility -->
+      </div>
+      <!-- //personal & utility -->
+
+      <!-- Menu -->
+      <div class="menuWrap">
+        <div class="menubox">
+          <ul>
+            <li [ngClass]="{current: path == 'home'}">
+              <button (click)="onOpenPage(100)"><span>{{'LAYOUT.LABEL.NAV1' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV1' | translate}}</span></button> <!-- Home -->
+            </li>
+            <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[0]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'accountinquiry'}">
+              <button (click)="onOpenPage(101);clearInquiryCondition();"><span>{{'LAYOUT.LABEL.NAV2' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV2' | translate}}</span></button> <!-- Account Inquiry -->
+            </li>
+            <li [ngClass]="{current: path == 'transfer' || path == 'multitransfer' || path == 'overseastransfer' || path == 'transferresultinquiry' || path == 'multitransferinquiry'}">
+              <button><span>{{'LAYOUT.LABEL.NAV3' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV3' | translate}}</span></button> <!-- Transfer -->
+              <ul>
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[1]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'transfer'}">
+                  <button (click)="onOpenPage(102)"><span>{{'LAYOUT.LABEL.NAV3' | translate}}</span></button>
+                </li> <!-- Transfer -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[2]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'multitransfer'}">
+                  <button (click)="onOpenPage(103)"><span>{{'LAYOUT.LABEL.NAV4' | translate}}</span></button>
+                </li> <!-- Multi Transfer -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[3]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'overseastransfer'}">
+                  <button (click)="onOpenPage(104)"><span>{{'LAYOUT.LABEL.NAV5' | translate}}</span></button>
+                </li> <!-- Overseas Transfer -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[4]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'transferresultinquiry'}">
+                  <button (click)="onOpenPage(105)"><span>{{'LAYOUT.LABEL.NAV6' | translate}}</span></button>
+                </li> <!-- Transfer Result Inquiry -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[5]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'multitransferinquiry'}">
+                  <button (click)="onOpenPage(106)"><span>{{'LAYOUT.LABEL.NAV7' | translate}}</span></button>
+                </li> <!-- Multi Transfer Inquiry -->
+              </ul>
+            </li>
+            <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[6]?.menuUseRightTypeCode  === '2'" [ngClass]="{current: path == 'approval'}">
+              <button (click)="onOpenPage(107)"><span>{{'LAYOUT.LABEL.NAV8' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV8' | translate}}</span></button> <!-- Approval -->
+            </li>
+            <li [ngClass]="{current: path == 'virtualaccountmanagement' || path == 'virtualaccountpaymenthistory' }">
+              <button><span>{{'LAYOUT.LABEL.NAV9' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV9' | translate}}</span></button> <!-- Virtual Account Service -->
+              <ul>
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[7]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'virtualaccountmanagement'}">
+                  <button (click)="onOpenPage(108)"><span>{{'LAYOUT.LABEL.NAV10' | translate}}</span></button>
+                </li> <!-- Virtual Account Management -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[8]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'virtualaccountpaymenthistory'}">
+                  <button (click)="onOpenPage(109)"><span>{{'LAYOUT.LABEL.NAV11' | translate}}</span></button>
+                </li> <!-- Virtual Account Payment History -->
+              </ul>
+            </li>
+            <!-- for menu of Card Management System-->
+            <li [ngClass]="{current: path == 'my-card' || path == 'transaction-inquiry'  || path == 'billing-inquiry' }">
+              <button><span>{{'CAR0110.LABEL.CARD' | translate}}</span><span class="txt_hover">{{'CAR0110.LABEL.CARD' | translate}} </span></button> <!-- Card -->
+              <ul>
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[18]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'my-card' }">
+                  <button (click)="onOpenPage(121)"><span>{{'CAR0110.LABEL.MY_CARD' | translate}}</span></button>
+                </li> <!-- menu for My Cards -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[19]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'transaction-inquiry' }">
+                  <button (click)="onOpenPage(122)"><span>{{'CAR0110.LABEL.TRANSACTION_INQUIRY' | translate}}</span></button>
+                </li> <!-- menu for Transaction Inquiry -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[20]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'billing-inquiry' }">
+                  <button (click)="onOpenPage(123)"><span>{{'CAR0110.LABEL.BILLING_INQUIRY' | translate}}</span></button>
+                </li> <!-- menu for Billing Inquiry -->
+              </ul>
+            </li>
+            <li [ngClass]="{current: path == 'usermanagement' || path == 'approvalstepmanagement' || path == 'frequentlyusedaccount' || path == 'accountgroupmanagement'}">
+              <button><span>{{'LAYOUT.LABEL.NAV12' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV12' | translate}}</span></button> <!-- Information Management -->
+              <ul>
+                <li *ngIf="userInfo.subIDYn === 'N'" [ngClass]="{current: path == 'usermanagement' }">
+                  <button (click)="onOpenPage(111)"><span>{{'LAYOUT.LABEL.NAV13' | translate}}</span></button>
+                </li> <!-- User Management -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[9]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'approvalstepmanagement' }">
+                  <button (click)="onOpenPage(110)"><span>{{'LAYOUT.LABEL.NAV14' | translate}}</span></button>
+                </li> <!-- Approval Step Management -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[12]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'frequentlyusedaccount' }">
+                  <button (click)="onOpenPage(113)"><span>{{'LAYOUT.LABEL.NAV15' | translate}}</span></button>
+                </li> <!-- Frequently Used Account -->
+                <!-- <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[11]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'accountgroupmanagement' }">
+                  <button (click)="onOpenPage(112)"><span>{{'LAYOUT.LABEL.NAV16' | translate}}</span></button>
+                </li> Account Group Management -->
+              </ul>
+            </li>
+            <li [ngClass]="{current: path == 'depositcalculator' || path == 'loancalculator' }">
+              <button><span>{{'LAYOUT.LABEL.NAV17' | translate}}</span><span class="txt_hover">{{'LAYOUT.LABEL.NAV17' | translate}}</span></button> <!-- Deposit &amp; Loan Calculator -->
+              <ul>
+                <!-- {current: message == 'Deposit Calculator'} {current: message == 'Loan Calculator'}  -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[13]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'depositcalculator' }">
+                  <button (click)="onOpenPage(114)"><span>{{'LAYOUT.LABEL.NAV18' | translate}}</span></button>
+                </li> <!-- Deposit Calculator -->
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[14]?.menuUseRightTypeCode === '2'" [ngClass]="{current: path == 'loancalculator' }">
+                  <button (click)="onOpenPage(115)"><span>{{'LAYOUT.LABEL.NAV19' | translate}}</span></button>
+                </li> <!-- Loan Calculator -->
+              </ul>
+            </li>
+          </ul>
+          <button type="button" class="btn_new_tab" (click)="onOpenNew()">New Tab</button>
+          <!-- favorite menu -->
+          <div class="favorite ui_dropdown" [ngClass]="{ 'ui_drop_open': sltFavoriteList }" (click)="$event.stopPropagation();sltFavoriteList = !sltFavoriteList">
+
+            <div class="tit">{{'LAYOUT.LABEL.FAVORITEMENU' | translate}}</div> <!-- Select Favorite Menu -->
+            <button type="button" tabindex="-1" class="btn_detail"><span>Show favorite menu list</span></button>
+            <!-- list -->
+            <div class="fav_list ui_drop_cont">
+              <ul>
+                  <li let *ngFor="let favoriteMenu of favoriteMenuList; let i=index">
+                    <button (click)="onOpenPage(favoriteMenu.seqNo)" kendoTooltip filter="span"><span title="{{ favoriteMenu.level2MenuDescription }}">{{ favoriteMenu.level2MenuDescription | translate }}</span></button>
+                    <button type="button" tabindex="-1" class="btn_del01" (click)="onDeleteFavorite(favoriteMenu)"><span>Remove from the favorites</span></button>
+                  </li>
+              </ul>
+              <div class="fav_manage">
+                <button (click)="onOpenFavorite()"><span>{{'LAYOUT.LABEL.MANAGEFAVORITEMENU' | translate}}</span></button> <!-- Manage Favorite menu -->
+              </div>
+            </div>
+            <!-- //list -->
+          </div>
+          <!-- //favorite menu -->
+        </div>
+      </div>
+      <!-- //Menu -->
+    </div>
+    <!-- //header -->
+
+    <!-- contents Area -->
+    <!-- <div class="contentsWrap">
+      <router-outlet></router-outlet>
+    </div> -->
+    <!-- //contents Area -->
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="foot_policy">
+        <button (click)="logo()"><h1 class="logo"><span>PPCB</span></h1></button>
+        <!-- menu -->
+        <ul class="footmenu_list">
+          <li><button (click)="news()"><span>{{'LAYOUT.LABEL.NEWS' | translate}}</span></button></li> <!-- News -->
+          <li><button (click)="rates()"><span>{{'LAYOUT.LABEL.RATES' | translate}}</span></button></li> <!-- Rates &amp; Fee Charges -->
+          <li><button (click)="privacy()"><span>{{'LAYOUT.LABEL.PRIVACY' | translate}}</span></button></li> <!-- Privacy Policy -->
+          <li><button (click)="contact()"><span>{{'LAYOUT.LABEL.CONTACT' | translate}}</span></button></li> <!-- Contact Us -->
+        </ul>
+        <!-- //menu -->
+
+        <!-- Site map -->
+        <div class="sitemapWrap" [ngClass]="{ 'open': sltSitemapList }" (click)="$event.stopPropagation();sltSitemapList = !sltSitemapList">
+          <button type="button" tabindex="-1" class="btn_sitemap"><span>{{'LAYOUT.LABEL.SITE' | translate}}</span></button> <!-- Site map -->
+          <!-- layer pop :: site map -->
+          <div class="sitemap_box">
+            <h2>{{'LAYOUT.LABEL.SITE' | translate}}</h2> <!-- Site map -->
+            <div class="sitemap_list">
+              <ul>
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[0]?.menuUseRightTypeCode === '2'">
+                  <button class="dep01" (click)="onOpenPage(101)"><strong>{{'LAYOUT.LABEL.NAV2' | translate}}</strong></button>
+                </li> <!-- Account Inquiry -->
+                <li><strong class="dep01">{{'LAYOUT.LABEL.NAV3' | translate}}</strong> <!-- Transfer -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[1]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(102)"><span>{{'LAYOUT.LABEL.NAV3' | translate}}</span></button>
+                    </li> <!-- Transfer -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[2]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(103)"><span>{{'LAYOUT.LABEL.NAV4' | translate}}</span></button>
+                    </li> <!-- Multi Transfer -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[3]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(104)"><span>{{'LAYOUT.LABEL.NAV5' | translate}}</span></button>
+                    </li> <!-- Overseas Transfer -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[4]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(105)"><span>{{'LAYOUT.LABEL.NAV6' | translate}}</span></button>
+                    </li> <!-- Transfer Result Inquiry -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[5]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(106)"><span>{{'LAYOUT.LABEL.NAV7' | translate}}</span></button>
+                    </li> <!-- Multi Transfer Inquiry -->
+                  </ul>
+                </li>
+                <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[6]?.menuUseRightTypeCode  === '2'">
+                  <button class="dep01" (click)="onOpenPage(107)"><strong>{{'LAYOUT.LABEL.NAV8' | translate}}</strong></button>
+                </li> <!-- Approval -->
+                <li><strong class="dep01">{{'LAYOUT.LABEL.NAV9' | translate}}</strong> <!-- Virtual Account Service -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[7]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(108)"><span>{{'LAYOUT.LABEL.NAV10' | translate}}</span></button>
+                    </li> <!-- Virtual Account Management -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[8]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(109)"><span>{{'LAYOUT.LABEL.NAV11' | translate}}</span></button>
+                    </li> <!-- Virtual Account Payment History -->
+                  </ul>
+                </li>
+                <li><strong class="dep01">{{'CAR0110.LABEL.CARD' | translate}}</strong> <!-- Information Management -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[18]?.menuUseRightTypeCode === '2'" >
+                      <button (click)="onOpenPage(121)"><span>{{'CAR0110.LABEL.MY_CARD' | translate}}</span></button>
+                    </li> <!-- My Cards -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[19]?.menuUseRightTypeCode === '2'" >
+                      <button (click)="onOpenPage(122)"><span>{{'CAR0110.LABEL.TRANSACTION_INQUIRY' | translate}}</span></button>
+                    </li> <!-- Transaction Inquiry -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[20]?.menuUseRightTypeCode === '2'" >
+                      <button (click)="onOpenPage(123)"><span>{{'CAR0110.LABEL.BILLING_INQUIRY' | translate}}</span></button>
+                    </li> <!-- Billing Inquiry -->
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><strong class="dep01">{{'LAYOUT.LABEL.NAV12' | translate}}</strong> <!-- Information Management -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N'">
+                      <button (click)="onOpenPage(111)"><span>{{'LAYOUT.LABEL.NAV13' | translate}}</span></button>
+                    </li> <!-- User Management -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[9]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(110)"><span>{{'LAYOUT.LABEL.NAV14' | translate}}</span></button>
+                    </li> <!-- Approval Step Management -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[12]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(113)"><span>{{'LAYOUT.LABEL.NAV15' | translate}}</span></button>
+                    </li> <!-- Frequently Used Account -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[11]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(112)"><span>{{'LAYOUT.LABEL.NAV16' | translate}}</span></button>
+                    </li> <!-- Account Group Management -->
+                  </ul>
+                </li>
+                <li><strong class="dep01">{{'LAYOUT.LABEL.NAV17' | translate}}</strong> <!-- Deposit &amp; Loan Calculator -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[13]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(114)"><span>{{'LAYOUT.LABEL.NAV18' | translate}}</span></button>
+                    </li> <!-- Deposit Calculator -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[14]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(115)"><span>{{'LAYOUT.LABEL.NAV19' | translate}}</span></button>
+                    </li> <!-- Loan Calculator -->
+                  </ul>
+                </li>
+                <li><strong class="dep01">{{'LAYOUT.LABEL.NAV20' | translate}}</strong> <!-- Setting -->
+                  <ul>
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[15]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(116)"><span>{{'LAYOUT.LABEL.NAV21' | translate}}</span></button></li> <!-- FAQ -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[16]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(117)"><span>{{'LAYOUT.LABEL.NAV22' | translate}}</span></button></li> <!-- Company Information Management -->
+                    <li *ngIf="userInfo.subIDYn === 'N' || menuRightData[17]?.menuUseRightTypeCode === '2'">
+                      <button (click)="onOpenPage(118)"><span>{{'LAYOUT.LABEL.NAV23' | translate}}</span></button></li> <!-- Change Password -->
+                  </ul>
+                </li>
+                <li>
+                  <button class="dep01" (click)="onOpenFavorite()"><strong>{{'LAYOUT.LABEL.NAV24' | translate}}</strong></button> <!-- Favorite -->
+                  <button class="dep01" (click)="onOpenPage(119)" *ngIf="userInfo.subIDYn === 'N' || menuRightData[18]?.menuUseRightTypeCode === '2'"><strong>{{'LAYOUT.LABEL.NAV25' | translate}}</strong></button> <!-- Notification Center -->
+                </li>
+                <li>
+                  <button class="dep01" onclick="javascript:window.toggle();"><strong>{{'LAYOUT.LABEL.NAV26' | translate}}</strong></button> <!-- Live chat -->
+                  <button class="dep01" (click)="logout()"><strong>{{'LAYOUT.LABEL.NAV27' | translate}}</strong></button> <!-- Sign out -->
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- //layer pop :: site map -->
+        </div>
+        <!-- //Site map -->
+      </div>
+      <div class="copyrightWrap">
+        <p><span>{{'LAYOUT.LABEL.FOOTER1' | translate}}</span> <strong> (855)23-909-909</strong></p> <!-- Call center -->
+        <p class="copyright"><span>{{'LAYOUT.LABEL.FOOTER2' | translate}}</span></p> <!-- Copyright © Phnom Penh Commercial Bank. All right Reserved. -->
+        <div class="follow">
+          <button class="facebook" (click)="facebook()"><span>{{'LAYOUT.LABEL.FOOTER3' | translate}}</span></button> <!-- Follow US -->
+          <kendo-dropdownlist
+            [data]="bankNetworkList"
+            [textField]="'text'"
+            [valueField]="'value'"
+            [(ngModel)]="bankNetwork"
+            (valueChange)="onBankSelect(bankNetwork)"
+            style="margin-top:-6px;"
+          >
+            <ng-template kendoDropDownListValueTemplate let-dataItem>
+              <span class="template" *ngIf="!!dataItem">{{ dataItem.text | translate}}</span>
+            </ng-template>
+            <ng-template kendoDropDownListItemTemplate let-dataItem>
+              <span class="template" *ngIf="!!dataItem">{{ dataItem.text | translate }}</span>
+            </ng-template>
+          </kendo-dropdownlist>
+
+        </div>
+      </div>
+    </div>
+    <!-- //footer -->
+
+    <button class="btn_top" (click)="onScrollTop()">move top</button>
+  </div>
+  </body>
+  <ng-container #container class="alert"></ng-container>
