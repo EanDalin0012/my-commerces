@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sun Jan 24 2021 01:11:55 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/layout/layout-tab/layout-tab.component.html
+* src/app/products/products-routing.module.ts
+* src/app/products/products.module.ts
+* src/app/products/products/products.component.html
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

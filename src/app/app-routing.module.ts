@@ -1,16 +1,23 @@
 import { LayoutTabComponent } from './layout/layout-tab/layout-tab.component';
-import { LayoutComponent } from './layout/layout/layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutBlankComponent } from './layout/layout-blank/layout-blank.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/product', pathMatch: 'full'},
-  {path: 'product', component: LayoutTabComponent, loadChildren: './products/products.module#ProductsModule'},
-  {path: 'account', component: LayoutBlankComponent, loadChildren: './accounts/accounts.module#AccountsModule'},
-  {path: 'sales', component: LayoutTabComponent, loadChildren: './sales/sales.module#SalesModule'},
-  {path: 'cart', component: LayoutTabComponent, loadChildren: './carts/carts.module#CartsModule'},
-  {path: 'notification', component: LayoutTabComponent, loadChildren: './notification/notification.module#NotificationModule'},
+  {
+    path: '',
+    component: LayoutTabComponent,
+    children: [
+      {path: '',              loadChildren: './products/products.module#ProductsModule'},
+      {path: 'account',       loadChildren: './accounts/accounts.module#AccountsModule'},
+      {path: 'sales',         loadChildren: './sales/sales.module#SalesModule'},
+      {path: 'cart',          loadChildren: './carts/carts.module#CartsModule'},
+      {path: 'notification',  loadChildren: './notification/notification.module#NotificationModule'},
+    ]
+  },
+  {path: 'product', component: LayoutBlankComponent, loadChildren: './products/products.module#ProductsModule'},
+  {path: 'components', component: LayoutBlankComponent, loadChildren: './components/components.module#ComponentsModule'},
 ];
 
 @NgModule({
