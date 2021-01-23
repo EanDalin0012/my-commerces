@@ -13,4 +13,9 @@ import { ProductsDetailsComponent } from './products-details/products-details.co
     ProductsRoutingModule
   ]
 })
-export class ProductsModule { }
+export class ProductsModule {
+  constructor() {
+    console.log('product module');
+
+  }
+ }
