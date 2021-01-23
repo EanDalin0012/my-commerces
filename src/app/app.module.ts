@@ -22,6 +22,28 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+import { GaugesModule } from '@progress/kendo-angular-gauges';
+import { IconsModule } from '@progress/kendo-angular-icons';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+import { MenuModule } from '@progress/kendo-angular-menu';
+import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { NotificationModule } from '@progress/kendo-angular-notification';
+import { SchedulerModule } from '@progress/kendo-angular-scheduler';
+import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
+import { UploadModule } from '@progress/kendo-angular-upload';
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,7 +90,17 @@ export function createTranslateLoader(http: HttpClient) {
     DateInputsModule,
     LabelModule,
     PDFExportModule,
-    ExcelExportModule
+    ExcelExportModule,
+    ChartsModule,
+    GaugesModule,
+    IconsModule,
+    IndicatorsModule,
+    MenuModule,
+    NavigationModule,
+    NotificationModule,
+    SchedulerModule,
+    ScrollViewModule,
+    UploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

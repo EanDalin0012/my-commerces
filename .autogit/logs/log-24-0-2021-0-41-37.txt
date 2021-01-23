@@ -1,0 +1,37 @@
+-------------------- Auto-Git Log --------------------
+		Sun Jan 24 2021 00:41:37 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/accounts/accounts.module.ts
+* src/app/carts/carts.module.ts
+* src/app/layout/header/header.component.html
+* src/app/layout/header/header.component.ts
+* src/app/notifications/notifications.module.ts
+* src/app/products/products.module.ts
+* src/app/sales/sales.module.ts
+
+
+Created files:
+* src/app/accounts/accounts-routing.module.ts
+* src/app/carts/carts-routing.module.ts
+* src/app/components/components-routing.module.ts
+* src/app/components/components.module.ts
+* src/app/components/components/components.component.css
+* src/app/components/components/components.component.html
+* src/app/components/components/components.component.spec.ts
+* src/app/components/components/components.component.ts
+* src/app/notifications/notifications-routing.module.ts
+* src/app/products/products-routing.module.ts
+* src/app/sales/sales-routing.module.ts
+* src/app/sales/sales/sales.component.css
+* src/app/sales/sales/sales.component.html
+* src/app/sales/sales/sales.component.spec.ts
+* src/app/sales/sales/sales.component.ts
+
+
+Deleted files:
+* src/app/sales/sales/sales.module.ts
+
+
+Renamed files:
