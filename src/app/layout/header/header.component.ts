@@ -60,6 +60,7 @@ export class HeaderComponent implements OnInit {
     km: { class: "khmer", text: "ខ្មែរ"},
     zh: { class: "china", text: "中文"},
   };
+
   public imagePreviews: any;
   bankNetworkList: Array<{ value: string, text: string }> = [
     { value: 'default', text: 'LAYOUT.LABEL.FOOTER4' },
