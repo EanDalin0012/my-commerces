@@ -34,13 +34,10 @@
                                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
                             },
                             "src/assets/css/bootstrap.min.css",
-                            "src/assets/css/font-awesome.min.css",
-                            "src/assets/css/elegant-icons.css",
                             "src/assets/css/nice-select.css",
                             "src/assets/css/jquery-ui.min.css",
                             "src/assets/css/owl.carousel.min.css",
                             "src/assets/css/slicknav.min.css",
-                            "src/assets/css/style.css",
                             "src/styles.css"
                         ],
                         "scripts": [
@@ -49,7 +46,6 @@
                             "src/assets/js/jquery.nice-select.min.js",
                             "src/assets/js/jquery-ui.min.js",
                             "src/assets/js/jquery.slicknav.js",
-                            "src/assets/js/mixitup.min.js",
                             "src/assets/js/main.js"
                         ]
                     },

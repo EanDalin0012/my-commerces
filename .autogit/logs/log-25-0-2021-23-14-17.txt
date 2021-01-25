@@ -1,0 +1,97 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jan 25 2021 23:14:17 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* src/app/components/index/index.component.html
+
+
+Created files:
+* src/assets/css/bootstrap.min.css
+* src/assets/css/elegant-icons.css
+* src/assets/css/font-awesome.min.css
+* src/assets/css/jquery-ui.min.css
+* src/assets/css/nice-select.css
+* src/assets/css/owl.carousel.min.css
+* src/assets/css/slicknav.min.css
+* src/assets/css/style.css
+* src/assets/img/banner/banner-1.jpg
+* src/assets/img/banner/banner-2.jpg
+* src/assets/img/blog/blog-1.jpg
+* src/assets/img/blog/blog-2.jpg
+* src/assets/img/blog/blog-3.jpg
+* src/assets/img/blog/blog-4.jpg
+* src/assets/img/blog/blog-5.jpg
+* src/assets/img/blog/blog-6.jpg
+* src/assets/img/blog/details/details-author.jpg
+* src/assets/img/blog/details/details-hero.jpg
+* src/assets/img/blog/details/details-pic.jpg
+* src/assets/img/blog/sidebar/sr-1.jpg
+* src/assets/img/blog/sidebar/sr-2.jpg
+* src/assets/img/blog/sidebar/sr-3.jpg
+* src/assets/img/breadcrumb.jpg
+* src/assets/img/cart/cart-1.jpg
+* src/assets/img/cart/cart-2.jpg
+* src/assets/img/cart/cart-3.jpg
+* src/assets/img/categories/cat-1.jpg
+* src/assets/img/categories/cat-2.jpg
+* src/assets/img/categories/cat-3.jpg
+* src/assets/img/categories/cat-4.jpg
+* src/assets/img/categories/cat-5.jpg
+* src/assets/img/featured/feature-1.jpg
+* src/assets/img/featured/feature-2.jpg
+* src/assets/img/featured/feature-3.jpg
+* src/assets/img/featured/feature-4.jpg
+* src/assets/img/featured/feature-5.jpg
+* src/assets/img/featured/feature-6.jpg
+* src/assets/img/featured/feature-7.jpg
+* src/assets/img/featured/feature-8.jpg
+* src/assets/img/hero/banner.jpg
+* src/assets/img/language.png
+* src/assets/img/latest-product/lp-1.jpg
+* src/assets/img/latest-product/lp-2.jpg
+* src/assets/img/latest-product/lp-3.jpg
+* src/assets/img/logo.png
+* src/assets/img/payment-item.png
+* src/assets/img/product/details/product-details-1.jpg
+* src/assets/img/product/details/product-details-2.jpg
+* src/assets/img/product/details/product-details-3.jpg
+* src/assets/img/product/details/product-details-4.jpg
+* src/assets/img/product/details/product-details-5.jpg
+* src/assets/img/product/details/thumb-1.jpg
+* src/assets/img/product/details/thumb-2.jpg
+* src/assets/img/product/details/thumb-3.jpg
+* src/assets/img/product/details/thumb-4.jpg
+* src/assets/img/product/discount/pd-1.jpg
+* src/assets/img/product/discount/pd-2.jpg
+* src/assets/img/product/discount/pd-3.jpg
+* src/assets/img/product/discount/pd-4.jpg
+* src/assets/img/product/discount/pd-5.jpg
+* src/assets/img/product/discount/pd-6.jpg
+* src/assets/img/product/product-1.jpg
+* src/assets/img/product/product-10.jpg
+* src/assets/img/product/product-11.jpg
+* src/assets/img/product/product-12.jpg
+* src/assets/img/product/product-2.jpg
+* src/assets/img/product/product-3.jpg
+* src/assets/img/product/product-4.jpg
+* src/assets/img/product/product-5.jpg
+* src/assets/img/product/product-6.jpg
+* src/assets/img/product/product-7.jpg
+* src/assets/img/product/product-8.jpg
+* src/assets/img/product/product-9.jpg
+* src/assets/js/bootstrap.min.js
+* src/assets/js/jquery-3.3.1.min.js
+* src/assets/js/jquery-ui.min.js
+* src/assets/js/jquery.nice-select.min.js
+* src/assets/js/jquery.slicknav.js
+* src/assets/js/main.js
+* src/assets/js/mixitup.min.js
+* src/assets/js/owl.carousel.min.js
+
+
+Deleted files:
+
+
+Renamed files:
