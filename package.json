@@ -58,6 +58,7 @@
         "@progress/kendo-svg-icons": "^0.1.2",
         "@progress/kendo-theme-default": "latest",
         "@progress/kendo-ui": "^2021.1.119",
+        "@types/jquery": "^3.5.5",
         "angular-admin-lte": "^3.1.0",
         "angular-animations": "^0.11.0",
         "bootstrap": "^4.6.0",
@@ -69,8 +70,8 @@
         "ionicons": "^5.3.0",
         "ionicons-npm": "^2.0.1",
         "jquery": "^3.5.1",
-        "prismjs": "^1.23.0",
         "jquery-ui": "^1.12.1",
+        "prismjs": "^1.23.0",
         "rxjs": "~6.6.0",
         "tslib": "^2.0.0",
         "zone.js": "~0.11.3"
