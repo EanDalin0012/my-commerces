@@ -1,0 +1,29 @@
+-------------------- Auto-Git Log --------------------
+		Tue Jan 26 2021 00:14:52 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* package-lock.json
+* package.json
+* src/index.html
+
+
+Created files:
+* .autogit/logs/log-25-0-2021-23-44-32.txt
+* src/assets/fonts/ElegantIcons.eot
+* src/assets/fonts/ElegantIcons.svg
+* src/assets/fonts/ElegantIcons.ttf
+* src/assets/fonts/ElegantIcons.woff
+* src/assets/fonts/FontAwesome.otf
+* src/assets/fonts/fontawesome-webfont.eot
+* src/assets/fonts/fontawesome-webfont.svg
+* src/assets/fonts/fontawesome-webfont.ttf
+* src/assets/fonts/fontawesome-webfont.woff
+* src/assets/fonts/fontawesome-webfont.woff2
+
+
+Deleted files:
+
+
+Renamed files:

@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
+    "@icon/elegant-icons": "0.0.1-alpha.4",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@progress/kendo-angular-buttons": "^6.0.0",
@@ -68,7 +69,11 @@
     "ionicons": "^5.3.0",
     "ionicons-npm": "^2.0.1",
     "jquery": "^3.5.1",
+<<<<<<< HEAD
     "prismjs": "^1.23.0",
+=======
+    "jquery-ui": "^1.12.1",
+>>>>>>> d38eb5b589276758a2be149085d8341f0748d9ce
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
