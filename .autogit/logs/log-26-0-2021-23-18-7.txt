@@ -1,0 +1,29 @@
+-------------------- Auto-Git Log --------------------
+		Tue Jan 26 2021 23:18:07 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* src/app/app-routing.module.ts
+* src/app/components/components.module.ts
+* src/app/layout/footer/footer.component.html
+* src/app/layout/header/header.component.html
+* src/app/layout/header/header.component.ts
+* src/app/products/products/products.component.html
+
+
+Created files:
+* src/app/components/header-kendo/header-kendo.component.css
+* src/app/components/header-kendo/header-kendo.component.html
+* src/app/components/header-kendo/header-kendo.component.spec.ts
+* src/app/components/header-kendo/header-kendo.component.ts
+* src/app/components/header1/header1.component.css
+* src/app/components/header1/header1.component.html
+* src/app/components/header1/header1.component.spec.ts
+* src/app/components/header1/header1.component.ts
+
+
+Deleted files:
+
+
+Renamed files:
