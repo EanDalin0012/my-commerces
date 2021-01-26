@@ -1,0 +1,52 @@
+<kendo-appbar [position]="'top'" class="position-fix width z-index-9999">
+  <kendo-appbar-section class="title">
+      <h1 class="title">Page Title</h1>
+  </kendo-appbar-section>
+
+  <kendo-appbar-spacer [width]="'32px'"></kendo-appbar-spacer>
+
+  <kendo-appbar-section class="appbar-items">
+      <kendo-menu [items]="items">
+      </kendo-menu>
+  </kendo-appbar-section>
+
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+
+  <!-- <kendo-appbar-section class="search-section">
+      <kendo-textbox placeholder="Search..." [clearButton]="true">
+          <ng-template kendoTextBoxPrefixTemplate>
+              <kendo-icon [name]="'search'"></kendo-icon>
+          </ng-template>
+      </kendo-textbox>
+  </kendo-appbar-section> -->
+  <!--
+  <kendo-appbar-section class='user-actions'> -->
+  <kendo-badge-container>
+      <kendo-icon class="kendo-icon" [name]="'shopping-cart'"></kendo-icon>
+      <kendo-badge>
+         <strong  *ngIf = "totalCartCounter">{{totalCartCounter}}</strong>
+         <strong  *ngIf = "!totalCartCounter">0</strong>
+      </kendo-badge>
+  </kendo-badge-container>
+  <span class="k-appbar-separator"></span>
+  <!-- </kendo-appbar-section> -->
+
+  <!-- <kendo-appbar-section class='user-actions'> -->
+  <kendo-badge-container>
+      <kendo-icon class="kendo-icon" [name]="'bell'"></kendo-icon>
+      <kendo-badge [shape]="'dot'" [themeColor]="'warning'" [size]="'small'" [position]="'inside'"></kendo-badge>
+  </kendo-badge-container>
+  <span class="k-appbar-separator"></span>
+  <!-- </kendo-appbar-section> -->
+  <kendo-avatar class="kendo-avatar" [imageSrc]="kendokaAvatar" [shape]="'circle'"></kendo-avatar>
+
+
+  <kendo-appbar-section>
+      <button class="k-button k-flat overflow-button" #anchor (click)="onToggle()">
+          <kendo-icon [name]="'menu'"></kendo-icon>
+      </button>
+
+  </kendo-appbar-section>
+</kendo-appbar>
+
+<router-outlet></router-outlet>

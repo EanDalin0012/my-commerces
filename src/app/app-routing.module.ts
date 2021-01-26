@@ -1,3 +1,4 @@
+import { LayoutComponent } from './layout/layout/layout.component';
 import { LayoutTabComponent } from './layout/layout-tab/layout-tab.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,7 +8,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/product', pathMatch: 'full'},
   {
     path: '',
-    component: LayoutTabComponent,
+    component: LayoutComponent,
     children: [
       {path: '',              loadChildren: './products/products.module#ProductsModule'},
       {path: 'account',       loadChildren: './accounts/accounts.module#AccountsModule'},
@@ -16,7 +17,7 @@ const routes: Routes = [
       {path: 'notification',  loadChildren: './notification/notification.module#NotificationModule'},
     ]
   },
-  {path: 'product', component: LayoutBlankComponent, loadChildren: './products/products.module#ProductsModule'},
+  {path: 'product', component: LayoutComponent, loadChildren: './products/products.module#ProductsModule'},
   {path: 'components', component: LayoutBlankComponent, loadChildren: './components/components.module#ComponentsModule'},
 ];
 

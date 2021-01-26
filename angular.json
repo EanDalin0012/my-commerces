@@ -30,14 +30,14 @@
                             "src/favicon.ico",
                             "src/assets"
                         ],
-                        "styles": [{
-                                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-                            },
+                        "styles": [
                             "src/assets/css/bootstrap.min.css",
                             "src/assets/css/elegant-icons.css",
                             "src/assets/css/font-awesome.min.css",
                             "src/assets/css/nice-select.css",
                             "src/assets/css/style.css",
+                            "src/assets/dist/css/adminlte.min.css",
+                            "src/assets/kendo-theme/default-4.24.0/all.css",
                             "src/styles.css"
                         ],
                         "scripts": [

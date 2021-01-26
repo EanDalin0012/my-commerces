@@ -5,14 +5,18 @@ import { ComponentsComponent } from './components/components.component';
 import { IndexComponent } from './index/index.component';
 import { HeaderComponent } from './header/header.component';
 import { BoxComponent } from './box/box.component';
+import { HeaderKendoComponent } from './header-kendo/header-kendo.component';
+import { MSharesModule } from '../share/m-shares/m-shares.module';
+import { Header1Component } from './header1/header1.component';
 
 
 
 @NgModule({
-  declarations: [ComponentsComponent, IndexComponent, HeaderComponent, BoxComponent],
+  declarations: [ComponentsComponent, IndexComponent, HeaderComponent, BoxComponent, HeaderKendoComponent, Header1Component],
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+    MSharesModule
   ],
   exports: [
     HeaderComponent,
