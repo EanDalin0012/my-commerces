@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  menuOverlay(event) {
+  menuOverlay(event:any) {
     console.log(event);
   }
 
