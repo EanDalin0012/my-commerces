@@ -10,13 +10,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
 
-  scroll    = "";
+  scroll    = '';
 
   ngOnInit(): void {
   }
 
 
 
+  // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewInit(): void {
     // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     // Add 'implements AfterViewInit' to the class.
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:storage', ['$event'])
 
+  // tslint:disable-next-line:typedef
   menuscroll() {
     if ($(".menuWrap").length > 0 && $(".page_title .guideWrap").length > 0) {
       const sc    = $(window).scrollTop();
@@ -46,6 +48,10 @@ export class HeaderComponent implements OnInit {
       //   $(".btn_top").hide();
       // }
     }
+  }
+
+  menuOverlay(event) {
+    console.log(event);
   }
 
 }
