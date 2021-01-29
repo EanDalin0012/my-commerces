@@ -70,17 +70,17 @@ const dataItmes: Product[] = [
   {
     productName: "Product A",
     price: 30,
-    url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+    url: 'https://img.etimg.com/thumb/msid-64446447,width-640,resizemode-4,imgsize-364438/densuke-watermelons.jpg',
   },
   {
     productName: "Product B",
     price: 30,
-    url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+    url: 'https://cdn.shopify.com/s/files/1/0859/3640/products/SN_Passion_Fruit_1024x1024.jpg?v=1489907403',
   },
   {
     productName: "Product C",
     price: 30,
-    url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+    url: 'https://img.alicdn.com/i4/au-rogor-new-zealand-around-9-a4150g-100-single-fruit-imported-fruit-gina-afterburner-fruit-gala-apple-fruit-fruit/TB1xHqvJFXXXXXoaXXXXXXXXXXX_!!0-item_pic.jpg',
   },
   {
     productName: "Product D",
@@ -90,7 +90,7 @@ const dataItmes: Product[] = [
   {
     productName: "Product E",
     price: 30,
-    url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+    url: 'https://toppng.com/uploads/preview/fresh-single-blackberry-fruit-115283287979ktotwapfu.png',
   },{
     productName: "Product F",
     price: 30,
@@ -100,7 +100,14 @@ const dataItmes: Product[] = [
     productName: "Product F",
     price: 30,
     url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+  },
+  {
+    productName: "Product Z",
+    price: 30,
+    url: 'https://turkishfruits.org/fresh-cherry-exporter.jpg',
   }
+
+
 ];
 
 const ProductTypeItems: ProductType[] = [

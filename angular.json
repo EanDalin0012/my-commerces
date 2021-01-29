@@ -38,7 +38,6 @@
                             "src/assets/css/style.css",
                             "src/assets/dist/css/adminlte.min.css",
                             "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-
                             "src/assets/kendo-theme/default-4.24.0/all.css",
                             "src/styles.css"
                         ],
@@ -46,9 +45,11 @@
                             "./node_modules/jquery/dist/jquery.min.js",
                             "./node_modules/bootstrap/dist/js/bootstrap.min.js",
                             "./node_modules/owl.carousel/dist/owl.carousel.min.js",
+                            "src/assets/js/jquery-ui.min.js",
                             "src/assets/js/jquery.nice-select.min.js",
                             "src/assets/js/jquery.slicknav.js",
                             "src/assets/js/mixitup.min.js",
+                            "src/assets/js/owl.carousel.min.js",
                             "src/assets/js/main.js"
                         ]
                     },

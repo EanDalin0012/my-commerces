@@ -1,7 +1,8 @@
 import { LANGUAGE, LOCAL_STORAGE } from './share/constants/common.const';
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Utils } from './share/utils/utils.static';
+import {SubscribeDataService} from './share/services/subscribe-data.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   title = 'my-commerces';
   constructor(
     private translate: TranslateService,
+    private subscribeDataService: SubscribeDataService
   ) {
     translate.setDefaultLang('en');
     translate.use("en");
@@ -27,5 +29,11 @@ export class AppComponent {
       this.translate.setDefaultLang( 'en' );
       this.translate.use( i18n );
     }
+  }
+
+  // @HostListener('scroll', ['$event']) // for scroll events of the current element
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll(event:any) {
+    this.subscribeDataService.subscribeScrollMessage(window.pageYOffset);
   }
 }

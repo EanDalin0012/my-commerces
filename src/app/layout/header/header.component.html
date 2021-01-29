@@ -1,11 +1,13 @@
-<body [ngClass]="scroll" (scroll)="menuscroll()">
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <div class="humberger__menu__overlay" [ngClass]="activeMenuOverlay" (click)="menuOverlay($event)"></div>
+
+    <div class="humberger__menu__overlay" [ngClass]="{'active': showHumbergerMenuWrapper === true }" (click)="menuOverlay($event)"></div>
+
     <!-- Humberger Begin -->
-    <div class="humberger__menu__wrapper" [ngClass]="showHumbergerMenuWrapper">
+    <div class="humberger__menu__wrapper" [ngClass]="{'show__humberger__menu__wrapper indexVal': showHumbergerMenuWrapper === true, '': showHumbergerMenuWrapper === false}">
         <div class="humberger__menu__logo">
             <a href="#"><img src="../../../assets/img/logo.png" alt=""></a>
         </div>
@@ -120,13 +122,16 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+
+        <div class="container" [ngClass]="{'position_fixed': positionFixed === true}">
             <div class="row">
+
                 <div class="col-lg-3">
                     <div class="header__logo">
                         <a href="./index.html"><img src="../../../assets/img/logo.png" alt=""></a>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
@@ -152,13 +157,20 @@
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
+
+                      <div class="humberger__open" (click)="showHumbergerMenuWrapper = !showHumbergerMenuWrapper">
+                        <i class="fa fa-bars"></i>
+                      </div>
+
                     </div>
                 </div>
+
+
             </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
+
+
+
         </div>
+
     </header>
     <!-- Header Section End -->
-</body>

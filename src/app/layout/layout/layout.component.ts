@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SubscribeDataService} from '../../share/services/subscribe-data.service';
 
 @Component({
   selector: 'app-layout',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
