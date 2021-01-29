@@ -8,13 +8,17 @@ import * as $ from 'jquery';
 export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
-  scroll    = "";
+  productTypes: ProductType[] =[];
+  allDepartments = true;
+
+  scroll    = '';
   constructor() {
 
   }
 
   ngOnInit(): void {
     this.products = dataItmes;
+    this.productTypes = ProductTypeItems;
   }
 
   ngAfterViewInit(): void {
@@ -54,7 +58,14 @@ interface Product {
   productName: string;
   price: number;
   url: string;
+  isSlideShow?: boolean;
 }
+
+interface ProductType {
+  type: string;
+  uri: string;
+}
+
 const dataItmes: Product[] = [
   {
     productName: "Product A",
@@ -84,6 +95,37 @@ const dataItmes: Product[] = [
     productName: "Product F",
     price: 30,
     url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
+  },
+  {
+    productName: "Product F",
+    price: 30,
+    url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
   }
 ];
 
+const ProductTypeItems: ProductType[] = [
+  {
+    type: 'Fresh Fruit',
+    uri: 'https://resources.ediblearrangements.com/resources/en-us/i/a/16oz_FruitSalad_PineGrapeHdewStrw_410x4105.jpg'
+  },
+  {
+    type: 'drink fruits',
+    uri: 'https://img4.goodfon.com/wallpaper/nbig/1/d9/smuzi-napitok-vitaminy-laim-granat-kivi-frukty.jpg'
+  },
+  {
+    type: 'Vegetables',
+    uri: 'https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg'
+  },
+  {
+    type: 'Fresh Meat',
+    uri: 'https://image.freepik.com/free-photo/raw-fresh-meat-with-rosemary_105495-275.jpg'
+  },
+  {
+    type: 'Ocean Foods',
+    uri: 'https://1.bp.blogspot.com/-ZQTadxpjmIo/Vtp-wqvkVYI/AAAAAAAATeU/r3_kVpCDOxI/s1600/IMG_3541.JPG'
+  },
+  {
+    type: 'Butter & Eggs',
+    uri: 'https://www.ketodomain.com/wp-content/uploads/2018/03/scrambled-eggs.jpg'
+  }
+];

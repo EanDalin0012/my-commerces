@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
-                    <div class="hero__categories__all">
+                    <div class="hero__categories__all" (click)="allDepartments =! allDepartments">
                         <i class="fa fa-bars"></i>
                         <span>All departments</span>
                     </div>
-                    <ul>
+                    <ul [ngClass]="{'display_block': allDepartments === true, 'display_none':allDepartments === false }">
                         <li><a href="#">Fresh Meat</a></li>
                         <li><a href="#">Vegetables</a></li>
                         <li><a href="#">Fruit & Nut Gifts</a></li>
@@ -66,20 +66,18 @@
         <div class="row">
             <div class="categories__slider owl-carousel owl-loaded owl-drag">
 
-
-
-
-
                 <div class="owl-stage-outer">
                     <div class="owl-stage" style="transform: translate3d(-1440px, 0px, 0px); transition: all 1.2s ease 0s; width: 2640px;">
-                        <div class="owl-item cloned" style="width: 240px;">
+
+                        <div class="owl-item cloned active" style="width: 240px;" *ngFor="let productType of productTypes">
                             <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg" style="background-image: url(&quot;img/categories/cat-3.jpg&quot;);">
-                                    <h5><a href="#">Vegetables</a></h5>
+                                <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg" style="background-image: url({{productType.uri}});">
+                                    <h5><a href="#">{{ productType.type}} </a></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="owl-item cloned" style="width: 240px;">
+
+                        <!-- <div class="owl-item cloned" style="width: 240px;">
                             <div class="col-lg-3">
                                 <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg" style="background-image: url(&quot;img/categories/cat-4.jpg&quot;);">
                                     <h5><a href="#">drink fruits</a></h5>
@@ -130,14 +128,14 @@
                         </div>
                         <div class="owl-item cloned active" style="width: 240px;">
                             <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg" style="background-image: url(&quot;img/categories/cat-1.jpg&quot;);">
+                                <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg" style="background-image: url('https://resources.ediblearrangements.com/resources/en-us/i/a/16oz_FruitSalad_PineGrapeHdewStrw_410x4105.jpg');">
                                     <h5><a href="#">Fresh Fruit</a></h5>
                                 </div>
                             </div>
                         </div>
                         <div class="owl-item cloned" style="width: 240px;">
                             <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg" style="background-image: url(&quot;img/categories/cat-2.jpg&quot;);">
+                                <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg" style="background-image: url('https://resources.ediblearrangements.com/resources/en-us/i/a/16oz_FruitSalad_PineGrapeHdewStrw_410x4105.jpg');">
                                     <h5><a href="#">Dried Fruit</a></h5>
                                 </div>
                             </div>
@@ -148,7 +146,7 @@
                                     <h5><a href="#">Vegetables</a></h5>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span class="fa fa-angle-left"><span></span></span></button><button type="button" role="presentation" class="owl-next"><span class="fa fa-angle-right"><span></span></span></button></div>

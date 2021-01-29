@@ -11,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
   scroll    = '';
+  activeMenuOverlay = 'active';
+  showHumbergerMenuWrapper = 'show__humberger__menu__wrapper';
 
   ngOnInit(): void {
   }
@@ -52,6 +54,8 @@ export class HeaderComponent implements OnInit {
 
   menuOverlay(event:any) {
     console.log(event);
+    this.activeMenuOverlay = '';
+    this.showHumbergerMenuWrapper = '';
   }
 
 }
