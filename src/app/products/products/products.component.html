@@ -64,107 +64,27 @@
 
 <!-- Categories Section Begin -->
 <section class="categories">
-    <div class="container">
-        <div class="row">
-            <div class="categories__slider owl-carousel owl-loaded owl-drag">
+  <div class="container">
 
-                <div class="owl-stage-outer">
-                    <div class="owl-stage" style="transform: translate3d(-1440px, 0px, 0px); transition: all 1.2s ease 0s; width: 2640px;">
-
-                        <div class="owl-item" style="width: 240px;" *ngFor="let productType of productTypes">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="productType.uri" style="background-image: url({{productType.uri}});">
-                                    <h5><a href="#">{{ productType.type}} </a></h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                          <div class="item" *ngFor="let image of images;let i= index">
-                            <img class="slide-image" src="{{image.image}}" >
-                            <div class="slide-text">
-                              <h4>{{image.text}}</h4>
-                            </div>
-                          </div>
-                        </owl-carousel>
-
-                        <!-- <div class="owl-item cloned" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg" style="background-image: url(&quot;img/categories/cat-4.jpg&quot;);">
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg" style="background-image: url(&quot;img/categories/cat-5.jpg&quot;);">
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg" style="background-image: url(&quot;img/categories/cat-1.jpg&quot;);">
-                                    <h5><a href="#">Fresh Fruit</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg" style="background-image: url(&quot;img/categories/cat-2.jpg&quot;);">
-                                    <h5><a href="#">Dried Fruit</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg" style="background-image: url(&quot;img/categories/cat-3.jpg&quot;);">
-                                    <h5><a href="#">Vegetables</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item active" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg" style="background-image: url(&quot;img/categories/cat-4.jpg&quot;);">
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item active" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg" style="background-image: url(&quot;img/categories/cat-5.jpg&quot;);">
-                                    <h5><a href="#">drink fruits</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item cloned active" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg" style="background-image: url('https://resources.ediblearrangements.com/resources/en-us/i/a/16oz_FruitSalad_PineGrapeHdewStrw_410x4105.jpg');">
-                                    <h5><a href="#">Fresh Fruit</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg" style="background-image: url('https://resources.ediblearrangements.com/resources/en-us/i/a/16oz_FruitSalad_PineGrapeHdewStrw_410x4105.jpg');">
-                                    <h5><a href="#">Dried Fruit</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="owl-item cloned" style="width: 240px;">
-                            <div class="col-lg-3">
-                                <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg" style="background-image: url(&quot;img/categories/cat-3.jpg&quot;);">
-                                    <h5><a href="#">Vegetables</a></h5>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span class="fa fa-angle-left"><span></span></span></button><button type="button" role="presentation" class="owl-next"><span class="fa fa-angle-right"><span></span></span></button></div>
-                <div class="owl-dots disabled"></div>
+    <div class="wrapper">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of dynamicSlides">
+          <ng-template class="slide" carouselSlide id="slide.id">
+            <div class="padding">
+              <img [src]="slide.src" [alt]="slide.id" [title]="slide.id">
+              <div style="margin: auto;width: 50%;">
+                <button class="k-button btn-w100px-h35px font-khmer-cursive btn-add-00" style="width: 100%;">
+                  <span class="k-icon k-i-plus-circle "></span>
+                  <span class="margin-left-5px">{{slide.title}}</span>
+                </button>
+              </div>
             </div>
-        </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
+
+  </div>
 </section>
 <!-- Categories Section End -->
 
@@ -192,7 +112,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" *ngFor="let item of products">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" style="background-image: url('{{item.url}}');">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" style="background-image: url({{item.url}});">
                         <ul class="featured__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>

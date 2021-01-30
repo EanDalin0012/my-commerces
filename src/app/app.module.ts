@@ -34,27 +34,6 @@ import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { UploadModule } from '@progress/kendo-angular-upload';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

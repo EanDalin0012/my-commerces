@@ -23,7 +23,8 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { InputsModule, SharedModule, TextBoxModule } from '@progress/kendo-angular-inputs';
 import { IconModule } from '@progress/kendo-angular-icons';
 import { MenusModule } from '@progress/kendo-angular-menu';
-import { OwlModule } from 'ngx-owl-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -62,7 +63,7 @@ import { OwlModule } from 'ngx-owl-carousel';
     TextBoxModule,
     MenusModule,
     ScrollViewModule,
-    OwlModule
+    CarouselModule
 
   ]
 })

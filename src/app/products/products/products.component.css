@@ -47,3 +47,8 @@
 .owl-carousel .next-slide:hover {
   background-position: -24px -53px;
 }
+
+.padding {
+  padding: 15px;
+  height: 225px;
+}

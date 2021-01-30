@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
+import {tumblrBoxIcon} from '@progress/kendo-svg-icons';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -8,32 +11,64 @@ import * as $ from 'jquery';
 export class ProductsComponent implements OnInit {
 
   // ngx-owl-carousel
-  title = 'OwlCarousel2 in Angular7 with Custom Navigation Arrows';
-  carouselOptions = {
-    margin: 25,
-    nav: true,
-    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
-    responsiveClass: true,
+  dynamicSlides = [
+    {
+      id: 1,
+      src:'https://freakyjolly.com/demo/jquery/PreloadJS/images/1.jpg',
+      alt:'Side 1',
+      title:'Side 1'
+    },
+    {
+      id: 2,
+      src:'https://freakyjolly.com/demo/jquery/PreloadJS/images/2.jpg',
+      alt:'Side 2',
+      title:'Side 2'
+    },
+    {
+      id: 3,
+      src:'https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg',
+      alt:'Side 3',
+      title:'Side 3'
+    },
+    {
+      id: 4,
+      src:'https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg',
+      alt:'Side 4',
+      title:'Side 4'
+    },
+    {
+      id: 5,
+      // src:'https://via.placeholder.com/600/f66b97',
+      src:'https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg',
+      alt:'Side 5',
+      title:'Side 5'
+    }
+  ];
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 60,
+    autoplay: false,
+    navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 1,
-        nav: true
+        items: 1
       },
-      600: {
-        items: 1,
-        nav: true
+      400: {
+        items: 2
+      },
+      760: {
+        items: 3
       },
       1000: {
-        items: 2,
-        nav: true,
-        loop: false
-      },
-      1500: {
-        items: 3,
-        nav: true,
-        loop: false
+        items: 4
       }
-    }
+    },
+    nav: true
   }
 
   images = [
@@ -47,14 +82,14 @@ export class ProductsComponent implements OnInit {
     },
     {
       text: "Morning Greens",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg"
+      image: 'https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg'
     },
     {
-      text: "Bunch of Love",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg"
+      text: 'Bunch of Love',
+      image: 'https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg'
     },
     {
-      text: "Blue Clear",
+      text: 'Blue Clear',
       image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg"
     },
     {
@@ -78,11 +113,18 @@ export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
   productTypes: ProductType[] =[];
-  allDepartments = true;
+
+  activeSlides: any;
 
   scroll    = '';
+
   constructor() {
 
+  }
+
+  getPassedData(data: any) {
+    this.activeSlides = data;
+    console.log(this.activeSlides);
   }
 
   ngOnInit(): void {
@@ -171,7 +213,7 @@ const dataItmes: Product[] = [
     url: 'https://webstockreview.net/images/banana-clipart-banna-9.jpg',
   },
   {
-    productName: "Product Z",
+    productName: 'Product Z',
     price: 30,
     url: 'https://turkishfruits.org/fresh-cherry-exporter.jpg',
   }
