@@ -79,6 +79,15 @@
                             </div>
                         </div>
 
+                        <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                          <div class="item" *ngFor="let image of images;let i= index">
+                            <img class="slide-image" src="{{image.image}}" >
+                            <div class="slide-text">
+                              <h4>{{image.text}}</h4>
+                            </div>
+                          </div>
+                        </owl-carousel>
+
                         <!-- <div class="owl-item cloned" style="width: 240px;">
                             <div class="col-lg-3">
                                 <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg" style="background-image: url(&quot;img/categories/cat-4.jpg&quot;);">

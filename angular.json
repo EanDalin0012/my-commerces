@@ -37,14 +37,14 @@
                             "src/assets/css/nice-select.css",
                             "src/assets/css/style.css",
                             "src/assets/dist/css/adminlte.min.css",
-                            "./node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+                            "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+                            "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
                             "src/assets/kendo-theme/default-4.24.0/all.css",
                             "src/styles.css"
                         ],
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.min.js",
                             "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "./node_modules/owl.carousel/dist/owl.carousel.min.js",
                             "src/assets/js/jquery-ui.min.js",
                             "src/assets/js/jquery.nice-select.min.js",
                             "src/assets/js/jquery.slicknav.js",
