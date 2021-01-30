@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Sat Jan 30 2021 15:26:49 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* angular.json
+* src/app/products/products.module.ts
+* src/app/products/products/products.component.css
+* src/app/products/products/products.component.html
+* src/app/products/products/products.component.ts
+* src/app/share/m-shares/m-shares.module.ts
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
