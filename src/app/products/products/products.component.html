@@ -110,21 +110,10 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" *ngFor="let item of products">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" style="background-image: url({{item.url}});">
-<!--                        <ul class="featured__item__pic__hover">-->
-<!--                            <li><a href="#"><i class="fa fa-heart"></i></a></li>-->
-<!--                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>-->
-<!--                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-<!--                        </ul>-->
                     </div>
-<!--                    <div class="featured__item__text">-->
-<!--                        <h6><a href="#">{{item.productName}}</a></h6>-->
-<!--                        <h5>{{item.price}}</h5>-->
-<!--                    </div>-->
                   <div class="margin-top">
                       <span>{{item.productName}} </span>
                       <span><strong>{{item.price}}</strong></span>
-<!--                      <h6><a href="#">{{item.productName}}</a></h6>&ndash;&gt;-->
-<!--                      <h5>{{item.price}}</h5>-->
                     <span class="k-block" style="color: #0000ff; float: right;right: 0;">
                       <button kendoButton look="flat">
                         <span class="k-icon k-i-minus"></span>
@@ -139,6 +128,16 @@
 <!--                        <button class="float-right border-none" kendoButton look="outline">100</button>-->
 <!--                        <button class="float-right" kendoButton icon="folder" look="outline"></button>-->
                   </div>
+
+                  <div class="col-xs-12 col-sm-6 example-col">
+                    <p>Flat button in parent element with text color #ff00ff</p>
+                    <p class="k-block" style="color: #ff00ff;">
+                      <button kendoButton look="flat">Browse</button>
+                      <button kendoButton icon="folder" look="flat">Browse</button>
+                      <button kendoButton icon="folder" look="flat"></button>
+                    </p>
+                  </div>
+
                 </div>
             </div>
 
