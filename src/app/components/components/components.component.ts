@@ -12,4 +12,8 @@ export class ComponentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onButtonClick(): void {
+    console.log('click');
+  }
+
 }

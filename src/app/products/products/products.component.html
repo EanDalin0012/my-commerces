@@ -72,11 +72,8 @@
           <ng-template class="slide" carouselSlide id="slide.id">
             <div class="padding">
               <img [src]="slide.src" [alt]="slide.id" [title]="slide.id">
-              <div style="margin: auto;width: 50%;">
-                <button class="k-button btn-w100px-h35px font-khmer-cursive btn-add-00" style="width: 100%;">
-                  <span class="k-icon k-i-plus-circle "></span>
-                  <span class="margin-left-5px">{{slide.title}}</span>
-                </button>
+              <div style="margin: auto;width: 50%;margin-bottom: 25px;">
+                <button kendoButton icon="folder" look="outline" style="margin-top: 20px;width: 100%;">Browse</button>
               </div>
             </div>
           </ng-template>
@@ -113,16 +110,35 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" *ngFor="let item of products">
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg" style="background-image: url({{item.url}});">
-                        <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
+<!--                        <ul class="featured__item__pic__hover">-->
+<!--                            <li><a href="#"><i class="fa fa-heart"></i></a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+<!--                        </ul>-->
                     </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">{{item.productName}}</a></h6>
-                        <h5>{{item.price}}</h5>
-                    </div>
+<!--                    <div class="featured__item__text">-->
+<!--                        <h6><a href="#">{{item.productName}}</a></h6>-->
+<!--                        <h5>{{item.price}}</h5>-->
+<!--                    </div>-->
+                  <div class="margin-top">
+                      <span>{{item.productName}} </span>
+                      <span><strong>{{item.price}}</strong></span>
+<!--                      <h6><a href="#">{{item.productName}}</a></h6>&ndash;&gt;-->
+<!--                      <h5>{{item.price}}</h5>-->
+                    <span class="k-block" style="color: #0000ff; float: right;right: 0;">
+                      <button kendoButton look="flat">
+                        <span class="k-icon k-i-minus"></span>
+                      </button>
+                      <button kendoButton look="flat">100</button>
+                      <button kendoButton look="flat">
+                        <span class="k-icon k-i-plus"></span>
+                      </button>
+                    </span>
+<!--                    -->
+<!--                        <button class="float-right" kendoButton icon="folder" look="outline"></button>-->
+<!--                        <button class="float-right border-none" kendoButton look="outline">100</button>-->
+<!--                        <button class="float-right" kendoButton icon="folder" look="outline"></button>-->
+                  </div>
                 </div>
             </div>
 
