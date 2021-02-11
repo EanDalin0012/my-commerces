@@ -198,16 +198,16 @@
           <div class="latest-product__slider owl-carousel owl-loaded owl-drag">
 
             <owl-carousel-o [options]="customOptions1">
-              <ng-container *ngFor="let latestProduct of latestProducts">
+              <ng-container *ngFor="let latestProducts of latestProductsNew">
 
-                <ng-template class="slide" carouselSlide >
+                <ng-template class="slide" carouselSlide *ngFor="let item of latestProducts">
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
-                      <img [src]="latestProduct.uri" alt="">
+                      <img [src]="item.uri" alt="item.productName">
                     </div>
                     <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
+                      <h6>{{item.productName}}</h6>
+                      <span>{{item.price}}</span>
                     </div>
                   </a>
 

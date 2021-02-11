@@ -135,55 +135,9 @@ export class ProductsComponent implements OnInit {
   ];
   // ngx-owl-carousel
 
-  latestProducts = [
-    {
-      productName: '1 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-1.jpg'
-    },
-    {
-      productName: '2 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-2.jpg'
-    },
-    {
-      productName: '3 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-3.jpg'
-    },
-    {
-      productName: '4 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-1.jpg'
-    },
-    {
-      productName: '5 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-2.jpg'
-    },
-    {
-      productName: '6 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-3.jpg'
-    },
-    {
-      productName: '7 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-2.jpg'
-    },
-    {
-      productName: '8 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-3.jpg'
-    },
-    {
-      productName: '9 Crab Pool Security',
-      pricie: '$ 30',
-      uri: '../../../assets/img/latest-product/lp-3.jpg'
-    }
-  ];
-
-  latestProductsNew = [];
+  latestProducts: Products[] =  mokUpProductItems;
+  latestProductsNew = Array<Products[]>();
+  latestProductTmp = Array<Products>();
 
   products: Product[] = [];
   productTypes: ProductType[] =[];
@@ -201,30 +155,31 @@ export class ProductsComponent implements OnInit {
     console.log(this.activeSlides);
   }
 
-  datav = [];
+
   ngOnInit(): void {
-    this.products = dataItmes;
-    const i = 0;
+    // this.latestProducts = mokUpProductItems;
+    let i = 0;
     let t = true;
+
+
     let arrLength = this.latestProducts.length;
     console.log(arrLength);
-    this.latestProducts.forEach((item, i) => {
+    this.latestProducts.forEach(item => {
       i += 1;
-      // @ts-ignore
-      this.datav.push(item);
-      console.log(i);
+      this.latestProductTmp.push(item);
+
       if (i % 3 == 0 ) {
-        // @ts-ignore
-        this.latestProductsNew.push(this.datav);
-        console.log(i,arrLength,this.datav);
-        this.datav = [];
+        this.latestProductsNew.push(this.latestProductTmp);
+
+        console.log(i,arrLength,this.latestProductTmp);
+        this.latestProductTmp = [];
       }
       if(arrLength % 3 != 0 && arrLength == i ){
-        // @ts-ignore
-        this.latestProductsNew.push(this.datav);
+        this.latestProductsNew.push(this.latestProductTmp);
       }
 
     });
+
     console.log("setInterval", this.latestProductsNew);
     this.productTypes = ProductTypeItems;
     // setInterval(() => {
@@ -347,3 +302,52 @@ const ProductTypeItems: ProductType[] = [
     uri: 'https://www.ketodomain.com/wp-content/uploads/2018/03/scrambled-eggs.jpg'
   }
 ];
+
+let mokUpProductItems: Products[] = [
+  {
+    productName: '1 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-1.jpg'
+  },
+  {
+    productName: '2 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-2.jpg'
+  },
+  {
+    productName: '3 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-3.jpg'
+  },
+  {
+    productName: '4 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-1.jpg'
+  },
+  {
+    productName: '5 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-2.jpg'
+  },
+  {
+    productName: '6 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-3.jpg'
+  },
+  {
+    productName: '7 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-2.jpg'
+  },
+  {
+    productName: '8 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-3.jpg'
+  },
+  {
+    productName: '9 Crab Pool Security',
+    price: '$ 30',
+    uri: '../../../assets/img/latest-product/lp-3.jpg'
+  }
+]
+
