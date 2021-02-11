@@ -137,32 +137,42 @@ export class ProductsComponent implements OnInit {
 
   latestProducts = [
     {
-      productName: 'Crab Pool Security',
+      productName: '1 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-1.jpg'
     },
     {
-      productName: 'Crab Pool Security',
+      productName: '2 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-2.jpg'
     },
     {
-      productName: 'Crab Pool Security',
+      productName: '3 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-3.jpg'
     },
     {
-      productName: 'Crab Pool Security',
+      productName: '4 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-1.jpg'
     },
     {
-      productName: 'Crab Pool Security',
+      productName: '5 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-2.jpg'
     },
     {
-      productName: 'Crab Pool Security',
+      productName: '6 Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-3.jpg'
+    },
+    {
+      productName: '7 Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-2.jpg'
+    },
+    {
+      productName: '8 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-3.jpg'
     }
@@ -189,18 +199,19 @@ export class ProductsComponent implements OnInit {
   datav = [];
   ngOnInit(): void {
     this.products = dataItmes;
-    const i = -1;
+    const i = 0;
     let arrLength = this.latestProducts.length;
     console.log(arrLength);
     this.latestProducts.forEach((item, i) => {
-      i += i;
+      i += 1;
       arrLength -= 1;
       // @ts-ignore
       this.datav.push(item);
-      console.log(i,arrLength,this.datav);
+      console.log(i);
       if (i > 2 && arrLength > 2) {
         // @ts-ignore
         this.latestProductsNew.push(this.datav);
+        console.log(i,arrLength,this.datav);
         this.datav = [];
         i = 0;
       } else {
