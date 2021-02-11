@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Thu Feb 11 2021 23:02:59 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/components/components-routing.module.ts
+* src/app/components/components.module.ts
+
+
+Created files:
+* .autogit/logs/log-11-1-2021-22-32-42.txt
+* src/app/components/slide-show1/slide-show1.component.css
+* src/app/components/slide-show1/slide-show1.component.html
+* src/app/components/slide-show1/slide-show1.component.spec.ts
+* src/app/components/slide-show1/slide-show1.component.ts
+
+
+Deleted files:
+
+
+Renamed files:
