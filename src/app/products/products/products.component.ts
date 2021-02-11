@@ -69,6 +69,7 @@ export class ProductsComponent implements OnInit {
     },
     nav: true
   }
+
   customOptions1: OwlOptions = {
     loop: true,
     mouseDrag: true,

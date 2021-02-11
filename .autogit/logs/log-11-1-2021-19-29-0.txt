@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Thu Feb 11 2021 19:29:00 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/products/products/products.component.html
+* src/app/products/products/products.component.ts
+* src/app/share/model/product-medel.ts
+
+
+Created files:
+* .autogit/logs/log-30-0-2021-17-38-6.txt
+* src/app/data/products.ts
+
+
+Deleted files:
+
+
+Renamed files:
