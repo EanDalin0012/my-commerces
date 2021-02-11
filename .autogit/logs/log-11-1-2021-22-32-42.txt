@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Feb 11 2021 22:32:42 GMT+0700 (Indochina Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/products/products/products.component.html
+
+
+Created files:
+* .autogit/logs/log-11-1-2021-22-2-28.txt
+
+
+Deleted files:
+
+
+Renamed files:
