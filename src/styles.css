@@ -1,0 +1,29 @@
+.with-50p {
+  width: 50% !important;
+}
+
+.fa,.far,.fas{
+  font-family: "FontAwesome" !important;
+  font-style: normal;
+}
+
+.featured__item {
+  margin-bottom: 15px;
+  box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.featured__item__pic {
+  height: 250px;
+}
+
+.k-button.k-outline:hover, .k-button.k-outline.k-state-hover {
+  border-color: #656565 !important;
+  color: #ffffff !important;
+  background-color: #656565 !important;
+  background-image: none !important;
+}
+
+.border-none{
+  border: none !important;
+}

@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
-import {tumblrBoxIcon} from '@progress/kendo-svg-icons';
 
 @Component({
   selector: 'app-products',
@@ -51,8 +50,8 @@ export class ProductsComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     dots: false,
-    navSpeed: 60,
-    autoplay: false,
+    navSpeed: 10,
+    autoplay: true,
     navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
@@ -69,6 +68,31 @@ export class ProductsComponent implements OnInit {
       }
     },
     nav: true
+  }
+  customOptions1: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 10,
+    autoplay: true,
+    navText: ['&#8249', '&#8250;'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      760: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      }
+    },
+    nav: false
   }
 
   images = [
@@ -111,6 +135,41 @@ export class ProductsComponent implements OnInit {
   ];
   // ngx-owl-carousel
 
+  latestProducts = [
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-1.jpg'
+    },
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-2.jpg'
+    },
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-3.jpg'
+    },
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-1.jpg'
+    },
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-2.jpg'
+    },
+    {
+      productName: 'Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-3.jpg'
+    }
+  ];
+
+  latestProductsNew = [];
+
   products: Product[] = [];
   productTypes: ProductType[] =[];
 
@@ -127,9 +186,33 @@ export class ProductsComponent implements OnInit {
     console.log(this.activeSlides);
   }
 
+  datav = [];
   ngOnInit(): void {
     this.products = dataItmes;
+    const i = -1;
+    let arrLength = this.latestProducts.length;
+    console.log(arrLength);
+    this.latestProducts.forEach((item, i) => {
+      i += i;
+      arrLength -= 1;
+      // @ts-ignore
+      this.datav.push(item);
+      console.log(i,arrLength,this.datav);
+      if (i > 2 && arrLength > 2) {
+        // @ts-ignore
+        this.latestProductsNew.push(this.datav);
+        this.datav = [];
+        i = 0;
+      } else {
+        // @ts-ignore
+        this.latestProductsNew.push(this.datav);
+      }
+    });
+    console.log("setInterval", this.latestProductsNew);
     this.productTypes = ProductTypeItems;
+    // setInterval(() => {
+    //   console.log("setInterval");
+    // }, 5000);
   }
 
   ngAfterViewInit(): void {
