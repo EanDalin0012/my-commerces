@@ -175,6 +175,11 @@ export class ProductsComponent implements OnInit {
       productName: '8 Crab Pool Security',
       pricie: '$ 30',
       uri: '../../../assets/img/latest-product/lp-3.jpg'
+    },
+    {
+      productName: '9 Crab Pool Security',
+      pricie: '$ 30',
+      uri: '../../../assets/img/latest-product/lp-3.jpg'
     }
   ];
 
@@ -200,24 +205,25 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.products = dataItmes;
     const i = 0;
+    let t = true;
     let arrLength = this.latestProducts.length;
     console.log(arrLength);
     this.latestProducts.forEach((item, i) => {
       i += 1;
-      arrLength -= 1;
       // @ts-ignore
       this.datav.push(item);
       console.log(i);
-      if (i > 2 && arrLength > 2) {
+      if (i % 3 == 0 ) {
         // @ts-ignore
         this.latestProductsNew.push(this.datav);
         console.log(i,arrLength,this.datav);
         this.datav = [];
-        i = 0;
-      } else {
+      }
+      if(arrLength % 3 != 0 && arrLength == i ){
         // @ts-ignore
         this.latestProductsNew.push(this.datav);
       }
+
     });
     console.log("setInterval", this.latestProductsNew);
     this.productTypes = ProductTypeItems;
