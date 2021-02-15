@@ -1,0 +1,7 @@
+.ng {
+  transform: translate3d(-1080px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;
+}
+
+.ng1 {
+  transform: translate3d(-720px, 0px, 0px); transition: all 1.2s ease 0s; width: 2160px;
+}

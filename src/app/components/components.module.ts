@@ -8,11 +8,12 @@ import { BoxComponent } from './box/box.component';
 import { HeaderKendoComponent } from './header-kendo/header-kendo.component';
 import { MSharesModule } from '../share/m-shares/m-shares.module';
 import { Header1Component } from './header1/header1.component';
+import { SlideShow1Component } from './slide-show1/slide-show1.component';
 
 
 
 @NgModule({
-  declarations: [ComponentsComponent, IndexComponent, HeaderComponent, BoxComponent, HeaderKendoComponent, Header1Component],
+  declarations: [ComponentsComponent, IndexComponent, HeaderComponent, BoxComponent, HeaderKendoComponent, Header1Component, SlideShow1Component],
   imports: [
     CommonModule,
     ComponentsRoutingModule,

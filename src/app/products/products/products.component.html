@@ -197,25 +197,28 @@
           <h4>Latest Products</h4>
           <div class="latest-product__slider owl-carousel owl-loaded owl-drag">
 
-            <owl-carousel-o [options]="customOptions1">
-              <ng-container *ngFor="let latestProduct of latestProducts">
+            <owl-carousel-o [options]="customOptions1" *ngFor="let latestProducts of latestProductsNew">
 
-                <ng-template class="slide" carouselSlide >
+
+                <ng-template class="slide" carouselSlide *ngFor="let items of latestProducts">
                   <a href="#" class="latest-product__item">
                     <div class="latest-product__item__pic">
-                      <img [src]="latestProduct.uri" alt="">
+                      <img [src]="items.uri" alt="">
                     </div>
                     <div class="latest-product__item__text">
-                      <h6>Crab Pool Security</h6>
-                      <span>$30.00</span>
+                      <h6>{{items.productName}}</h6>
+                      <span>{{items.price}}</span>
                     </div>
                   </a>
-
                 </ng-template>
 
-              </ng-container>
-
             </owl-carousel-o>
+
+            <!-- <div *ngFor= "let products of latestProductsNew">
+                  <span *ngFor="let item of products">
+                    {{item.uri}}
+                  </span>
+            </div> -->
 
             <div class="owl-nav" style="overflow: visible;">
                 <button kendoButton look="outline" [primary]="true" class="border-none">
@@ -245,38 +248,19 @@
 
                   <div class="latest-prdouct__slider__item">
 
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-1.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
-
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-2.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
-
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-3.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
+                    <owl-carousel-o [options]="customOptions1" *ngFor="let latestProducts of latestProductsNew">
+                      <ng-template class="slide" carouselSlide *ngFor="let items of latestProducts">
+                        <a href="#" class="latest-product__item">
+                          <div class="latest-product__item__pic">
+                            <img [src]="items.uri" alt="">
+                          </div>
+                          <div class="latest-product__item__text">
+                            <h6>{{items.productName}}</h6>
+                            <span>{{items.price}}</span>
+                          </div>
+                        </a>
+                      </ng-template>
+                  </owl-carousel-o>
 
                   </div>
                 </div>
@@ -317,38 +301,19 @@
                 <div class="owl-item cloned" style="width: 359.99px;">
                   <div class="latest-prdouct__slider__item">
 
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-1.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
-
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-2.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
-
-                    <a href="#" class="latest-product__item">
-                      <div class="latest-product__item__pic">
-                        <img src="../../../assets/img/latest-product/lp-3.jpg" alt="">
-                      </div>
-                      <div class="latest-product__item__text">
-                        <h6>Crab Pool Security</h6>
-                        <span>$30.00</span>
-                      </div>
-                    </a>
-
+                    <owl-carousel-o [options]="customOptions1" *ngFor="let latestProducts of latestProductsNew">
+                      <ng-template class="slide" carouselSlide *ngFor="let items of latestProducts">
+                        <a href="#" class="latest-product__item">
+                          <div class="latest-product__item__pic">
+                            <img [src]="items.uri" alt="">
+                          </div>
+                          <div class="latest-product__item__text">
+                            <h6>{{items.productName}}</h6>
+                            <span>{{items.price}}</span>
+                          </div>
+                        </a>
+                      </ng-template>
+                  </owl-carousel-o>
 
                   </div>
                 </div>
