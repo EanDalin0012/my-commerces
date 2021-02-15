@@ -5,7 +5,7 @@ import { Utils } from './share/utils/utils.static';
 import {SubscribeDataService} from './share/services/subscribe-data.service';
 import {DeviceDetectorService, DeviceInfo} from 'ngx-device-detector';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-root',
