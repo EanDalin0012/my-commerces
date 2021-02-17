@@ -1,111 +1,126 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                    <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" id="exampleInputEmail1" value="1">
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$1</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$1</strong></td>
-                        <td class="col-sm-1 col-md-1">
-                            <button type="button" class="btn btn-danger">
-                          <span class="glyphicon glyphicon-remove"></span> Remove
-                      </button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                    <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                    <span>Status: </span><span class="text-warning"><strong>Leaves warehouse in 2 - 3 weeks</strong></span>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" value="1">
-                        </td>
-                        <td class="col-md-1 text-center"><strong>$1</strong></td>
-                        <td class="col-md-1 text-center"><strong>$1</strong></td>
-                        <td class="col-md-1">
-                            <button type="button" class="btn btn-danger">
-                          <span class="glyphicon glyphicon-remove"></span> Remove
-                      </button></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                            <h5>Subtotal</h5>
-                        </td>
-                        <td class="text-right">
-                            <h5><strong>$2</strong></h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                            <h5>Estimated shipping</h5>
-                        </td>
-                        <td class="text-right">
-                            <h5><strong>$2</strong></h5>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                            <h3>Total</h3>
-                        </td>
-                        <td class="text-right">
-                            <h3><strong>$31.53</strong></h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                            <button type="button" class="btn btn-default">
-                          <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                      </button></td>
-                        <td>
-
-
-
-                            <button type="button" class="btn btn-success" (click)="testing();">
-                              Checkout <span class="glyphicon glyphicon-play"></span>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="container rounded bg-white">
+  <div class="row d-flex justify-content-center pb-5">
+    <div class="col-sm-5 col-md-5 ml-1">
+      <div class="py-4 d-flex flex-row">
+        <h5><span class="fa fa-check-square-o"></span><b>ELIGIBLE</b> | </h5><span class="pl-2">Pay</span>
+      </div>
+      <h4 class="green">$85.00</h4>
+      <h4>Diabetes Pump & Supplies</h4>
+      <div class="d-flex pt-2">
+        <div>
+          <p><b>Insurance Responsibility.</b><span class="green">$71.76</span></p>
         </div>
+        <div class="ml-auto">
+          <p class="text-primary"><i class="fa fa-plus-circle text-primary"></i>Add insurance card</p>
+        </div>
+      </div>
+      <p>Insurance claims and all necessary dependencies will be submitted to your insurer for the coverred portion of this order</p>
+      <div class="rounded bg-light d-flex">
+        <div class="p-2">Aetna-Open Access</div>
+        <div class="ml-auto p-2">OAP</div>
+      </div>
+      <hr>
+      <div class="pt-2">
+        <div class="d-flex">
+          <div>
+            <p><b>Patient Balance.</b><span class="green">$13.24</span></p>
+          </div>
+          <div class="ml-auto p-2">
+            <p class="text-primary"><i class="fa fa-plus-circle text-primary"></i>Add payment card</p>
+          </div>
+        </div>
+        <p> This is an estimate for the portion of your order (not covered by insurance) due today . once insurance finalizes their review refunds and/or balances will reconcile automatically. </p>
+        <form class="pb-3">
+          <div class="d-flex flex-row align-content-center">
+            <div class="pt-2 pr-2"><input type="radio" name="radio1" id="r1" checked></div>
+            <div class="rounded border d-flex w-100 px-2">
+              <div class="pt-2">
+                <p><i class="fa fa-cc-visa text-primary pr-2"></i>Visa Debit Card</p>
+              </div>
+              <div class="ml-auto pt-2">************3456</div>
+            </div>
+          </div>
+        </form>
+        <form class="pb-3">
+          <div class="d-flex flex-row w-100">
+            <div class="pt-2 pr-2"><input type="radio" name="radio2" id="r2"></div>
+            <div class="rounded d-flex w-100 px-2">
+              <div class="pt-2">
+                <p><i class="fa fa-cc-mastercard pr-2"></i>Mastercard Office</p>
+              </div>
+              <div class="ml-auto pt-2">************1038</div>
+            </div>
+          </div>
+        </form>
+
+        <form class="pb-3">
+          <div class="d-flex flex-row w-100">
+
+            <div class="pt-2 pr-2"><input type="radio" name="radio2" id="r2"></div>
+
+            <div class="rounded d-flex w-100 px-2">
+              <div class="pt-2">
+                <p> <img src="../../../assets/img/logo/wingpay.png" style="width: 60px;">
+                  Wing Pay</p>
+              </div>
+              <div class="ml-auto pt-2">************1038</div>
+            </div>
+          </div>
+        </form>
+
+        <div>
+
+          <input type="button" value="Proceed to payment" class="btn btn-primary btn-block"> </div>
+      </div>
     </div>
+    <div class="col-sm-3 col-md-4 offset-md-1 mobile">
+      <div class="py-4 d-flex justify-content-end">
+        <h6><a href="#">Cancel and return to website</a></h6>
+      </div>
+      <div class="bg-light rounded d-flex flex-column">
+        <div class="p-2 ml-3">
+          <h4>Order Recap</h4>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Contracted Price</div>
+          <div class="ml-auto">$186.76</div>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Amount toward deductible</div>
+          <div class="ml-auto">$0.00</div>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Coinsurance( 0% )</div>
+          <div class="ml-auto">+ $0.00</div>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Copayment</div>
+          <div class="ml-auto">+ $40.00</div>
+        </div>
+        <div class="border-top px-4 mx-3"> </div>
+        <div class="p-2 d-flex pt-3">
+          <div class="col-8">Total Deductible, Coinsurance, and Copay</div>
+          <div class="ml-auto">$40.00</div>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Maximum out-of-pocket on Insurance Policy (not reached)</div>
+          <div class="ml-auto">$6500.00</div>
+        </div>
+        <div class="border-top px-4 mx-3"></div>
+        <div class="p-2 d-flex pt-3">
+          <div class="col-8">Insurance Responsibility</div>
+          <div class="ml-auto"><b>$71.76</b></div>
+        </div>
+        <div class="p-2 d-flex">
+          <div class="col-8">Patient Balance <span class="fa fa-question-circle text-secondary"></span></div>
+          <div class="ml-auto"><b>$71.76</b></div>
+        </div>
+        <div class="border-top px-4 mx-3"></div>
+        <div class="p-2 d-flex pt-3">
+          <div class="col-8"><b>Total</b></div>
+          <div class="ml-auto"><b class="green">$85.00</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
