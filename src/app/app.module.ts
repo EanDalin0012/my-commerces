@@ -35,6 +35,7 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { UploadModule } from '@progress/kendo-angular-upload';
 import { GetWayComponent } from './get-way/get-way.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ResultPayComponent } from './result-pay/result-pay.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -46,7 +47,8 @@ export function createTranslateLoader(http: HttpClient) {
     LayoutComponent,
     LayoutBlankComponent,
     LayoutTabComponent,
-    GetWayComponent
+    GetWayComponent,
+    ResultPayComponent
   ],
   imports: [
     BrowserModule,

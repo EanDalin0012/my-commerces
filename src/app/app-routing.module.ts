@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutBlankComponent } from './layout/layout-blank/layout-blank.component';
 import {GetWayComponent} from './get-way/get-way.component';
+import {ResultPayComponent} from './result-pay/result-pay.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/product', pathMatch: 'full'},
   {path: 'get-way', component: GetWayComponent},
+  {path: 'result-pay', component: ResultPayComponent},
   {
     path: '',
     component: LayoutComponent,
