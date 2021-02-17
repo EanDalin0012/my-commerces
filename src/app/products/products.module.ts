@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products/products.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { MSharesModule } from '../share/m-shares/m-shares.module';
+import { CheckOutComponent } from './check-out/check-out.component';
 
 
 
 @NgModule({
-  declarations: [ProductsComponent, ProductsDetailsComponent],
+  declarations: [ProductsComponent, ProductsDetailsComponent, CheckOutComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

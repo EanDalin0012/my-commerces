@@ -1,11 +1,12 @@
 import { LayoutComponent } from './layout/layout/layout.component';
-import { LayoutTabComponent } from './layout/layout-tab/layout-tab.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutBlankComponent } from './layout/layout-blank/layout-blank.component';
+import {GetWayComponent} from './get-way/get-way.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/product', pathMatch: 'full'},
+  {path: 'get-way', component: GetWayComponent},
   {
     path: '',
     component: LayoutComponent,
@@ -18,6 +19,7 @@ const routes: Routes = [
     ]
   },
   {path: 'product', component: LayoutComponent, loadChildren: './products/products.module#ProductsModule'},
+  {path: 'websocket', loadChildren: './websocket/websocket.module#WebsocketModule'},
   {path: 'components', component: LayoutBlankComponent, loadChildren: './components/components.module#ComponentsModule'},
 ];
 

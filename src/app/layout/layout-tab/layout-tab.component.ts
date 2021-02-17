@@ -1,5 +1,6 @@
 
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import {SubscribeDataService} from '../../share/services/subscribe-data.service';
 
 const items: any[] = [
   {
@@ -34,9 +35,10 @@ export class LayoutTabComponent implements OnInit {
 
     totalCartCounter = 0;
     // productList = new Array<Product>();
-
+  data: any;
   constructor(
-    private zone: NgZone) { }
+    private zone: NgZone) {
+  }
 
   ngOnInit(): void {
 

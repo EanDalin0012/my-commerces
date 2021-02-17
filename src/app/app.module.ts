@@ -33,6 +33,8 @@ import { NotificationModule } from '@progress/kendo-angular-notification';
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { UploadModule } from '@progress/kendo-angular-upload';
+import { GetWayComponent } from './get-way/get-way.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,12 +45,14 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     LayoutComponent,
     LayoutBlankComponent,
-    LayoutTabComponent
+    LayoutTabComponent,
+    GetWayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MLayoutModule,
+    ReactiveFormsModule,
     MSharesModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -57,29 +61,6 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       },
     }),
-    HttpClientModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    DropDownsModule,
-    PopupModule,
-    TreeViewModule,
-    DialogsModule,
-    ButtonsModule,
-    GridModule,
-    DateInputsModule,
-    LabelModule,
-    PDFExportModule,
-    ExcelExportModule,
-    ChartsModule,
-    GaugesModule,
-    IconsModule,
-    IndicatorsModule,
-    MenuModule,
-    NavigationModule,
-    NotificationModule,
-    SchedulerModule,
-    ScrollViewModule,
-    UploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

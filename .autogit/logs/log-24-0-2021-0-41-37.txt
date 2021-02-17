@@ -23,7 +23,7 @@ Created files:
 * src/app/components/components/components.component.ts
 * src/app/notifications/notifications-routing.module.ts
 * src/app/products/products-routing.module.ts
-* src/app/sales/sales-routing.module.ts
+* src/app/sales/websocket-routing.module.ts
 * src/app/sales/sales/sales.component.css
 * src/app/sales/sales/sales.component.html
 * src/app/sales/sales/sales.component.spec.ts
