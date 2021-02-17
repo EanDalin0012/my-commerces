@@ -9,17 +9,22 @@ import {Router} from '@angular/router';
 })
 export class CheckOutComponent implements OnInit {
 
+  isSelectVisa: boolean;
+  isSelectMaster: boolean;
+  isSelectWingPay: boolean;
+
   constructor(
     private subscribeDataService: SubscribeDataService,
     private router: Router) {
   }
 
   ngOnInit(): void {
+    this.isSelectVisa = false;
+    this.isSelectMaster = false;
+    this.isSelectWingPay = false;
   }
 
   testing() {
-    avascript:self.close()
-
     const remark = new Date().toISOString();
     const  baseURL = 'https://stageonline.wingmoney.com/wingonlinesdk/';
     const data = {
@@ -56,8 +61,9 @@ export class CheckOutComponent implements OnInit {
     document.body.appendChild(mapForm);
     mapForm.submit();
 
-
-
   }
 
+  isSelectVisaChange(event): void {
+    console.log(event);
+  }
 }
